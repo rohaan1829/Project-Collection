@@ -204,6 +204,8 @@ main{ position: relative; z-index: 2; }
   grid-template-columns: 1fr;
   gap: 48px;
   padding: 20px 0;
+  position: relative;
+  z-index: 2;          /* headline + signature stay above the portrait if they overlap */
 }
 .masthead__pre{
   display:flex; align-items:center; gap:18px;
@@ -304,6 +306,45 @@ main{ position: relative; z-index: 2; }
   text-align: right;
 }
 .sig{ width: 200px; height: 50px; color: var(--ink); }
+
+/* hero portrait — right-side magazine-cover composition */
+.hero__portrait{
+  position: absolute;
+  right: clamp(20px, 4vw, 90px);
+  bottom: 90px;                 /* above the marquee strip */
+  width: clamp(320px, 36vw, 620px);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;                   /* sits behind text content but above background atmosphere */
+  /* Editorial grade: gently warm, slightly desaturated, matches the Plate I. portrait */
+  filter: contrast(1.02) saturate(0.92) sepia(0.06);
+  /* Soft fade at the bottom so the figure dissolves into the paper */
+  -webkit-mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
+  /* Entry animation joins the hero load sequence */
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroPortraitIn 1.6s var(--ease) 1.05s forwards;
+  will-change: transform, opacity;
+}
+@keyframes heroPortraitIn{
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+/* Tablet: shrink a bit, pull closer to the edge */
+@media (max-width: 1024px){
+  .hero__portrait{
+    width: clamp(240px, 32vw, 380px);
+    right: 20px;
+    bottom: 110px;
+  }
+}
+
+/* Mobile: hide entirely. The Engage portrait covers mobile users. */
+@media (max-width: 820px){
+  .hero__portrait{ display: none; }
+}
 
 @media (max-width: 820px){
   .hero__sub{
