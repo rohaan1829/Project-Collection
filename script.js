@@ -249,6 +249,45 @@
     reveals.forEach((el) => el.classList.add('is-in'));
   }
 
+  /* ─────  COUNTER ANIMATION ─────
+     Works on both mobile (vertical stack) and desktop (horizontal pin).
+     Independent of GSAP so it doesn't depend on the case-study scroll. */
+  const animateCounter = (el) => {
+    const target = parseInt(el.dataset.count, 10);
+    if (!Number.isFinite(target)) return;
+    const duration = 1800;
+    const start = performance.now();
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(target * eased).toLocaleString('en-US');
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const counters = document.querySelectorAll('.counter');
+  if (counters.length) {
+    if ('IntersectionObserver' in window && !reduceMotion) {
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      counters.forEach((c) => counterObserver.observe(c));
+    } else {
+      // Fallback: set to final value immediately
+      counters.forEach((c) => {
+        const target = parseInt(c.dataset.count, 10);
+        c.textContent = Number.isFinite(target) ? target.toLocaleString('en-US') : '';
+      });
+    }
+  }
+
   /* ─────  HORIZONTAL PINNED CASE STUDY ───── */
   if (window.gsap && window.ScrollTrigger && !reduceMotion) {
     gsap.registerPlugin(ScrollTrigger);
@@ -304,35 +343,6 @@
     if (caseSection && track && panels.length && window.innerWidth > 820) {
       const totalPanels = panels.length;
       const distance = (totalPanels - 1) * window.innerWidth;
-
-      // counters trigger when ledger panel hits middle
-      const ledgerPanel = document.querySelector('.panel--ledger');
-      if (ledgerPanel) {
-        const counters = ledgerPanel.querySelectorAll('.counter');
-        ScrollTrigger.create({
-          trigger: caseSection,
-          start: 'top top',
-          end: () => `+=${distance}`,
-          onUpdate: (self) => {
-            // ledger is panel 4 of 5 (index 3); fires around 65–85% progress
-            if (self.progress > 0.6 && !ledgerPanel.dataset.counted) {
-              ledgerPanel.dataset.counted = '1';
-              counters.forEach((c) => {
-                const target = parseInt(c.dataset.count, 10);
-                const obj = { v: 0 };
-                gsap.to(obj, {
-                  v: target,
-                  duration: 1.8,
-                  ease: 'power2.out',
-                  onUpdate: () => {
-                    c.textContent = Math.round(obj.v).toLocaleString('en-US');
-                  },
-                });
-              });
-            }
-          },
-        });
-      }
 
       // parallax on diagram
       const diagram = document.querySelector('.diagram');
