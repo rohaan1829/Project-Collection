@@ -1,0 +1,26 @@
+# personal documents — never tracked
+my data/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# logs & build artifacts
+*.log
+node_modules/
+dist/
+build/
+
+# environment / secrets
+.env
+.env.local
+.env.*.local
+
+# vercel
+.vercel/
