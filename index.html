@@ -1,0 +1,1357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rohaan Ashraf · Software Engineer · Portfolio 2026</title>
+    <meta
+      name="description"
+      content="Software engineer building production APIs, full-stack web apps, and AI-powered services for founders and product teams. Available for client work, by introduction or direct enquiry."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Fraunces:opsz,wght,SOFT,WONK@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="128x128" href="assets/logo-128.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+    <link rel="preload" as="image" href="assets/portrait.jpg" />
+
+    <!-- preload libs in parallel; they still execute in <body> order -->
+    <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" crossorigin />
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin />
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin />
+  </head>
+  <body>
+    <!-- grain overlay -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- nav -->
+    <nav class="nav" aria-label="Primary">
+      <a href="#top" class="nav__mark" aria-label="Rohaan Ashraf · Home">
+        <img
+          src="assets/logo-64.png"
+          srcset="assets/logo-64.png 1x, assets/logo-128.png 2x"
+          width="48"
+          height="48"
+          alt="Rohaan Ashraf monogram"
+          decoding="async"
+        />
+      </a>
+      <ul class="nav__list">
+        <li><a href="#index">Index</a></li>
+        <li><a href="#work">Selected Work</a></li>
+        <li><a href="#case">Case Study</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#engage">Engage</a></li>
+      </ul>
+      <a href="#engage" class="nav__cta">
+        <span>Start a project</span>
+        <svg viewBox="0 0 16 16" width="11" height="11" aria-hidden="true">
+          <path
+            d="M3 13L13 3M5 3h8v8"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="1"
+          />
+        </svg>
+      </a>
+
+      <button
+        type="button"
+        class="nav__burger"
+        id="navBurger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="navSheet"
+      >
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </nav>
+
+    <!-- mobile sheet menu -->
+    <div
+      class="sheet"
+      id="navSheet"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site navigation"
+    >
+      <div class="sheet__backdrop" data-sheet-close></div>
+      <nav class="sheet__panel" aria-label="Mobile primary">
+        <header class="sheet__head">
+          <span class="mono dim">menu</span>
+          <button
+            type="button"
+            class="sheet__close"
+            data-sheet-close
+            aria-label="Close menu"
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path
+                d="M5 5l14 14M19 5L5 19"
+                stroke="currentColor"
+                fill="none"
+                stroke-width="1.2"
+              />
+            </svg>
+          </button>
+        </header>
+
+        <ol class="sheet__list">
+          <li>
+            <a href="#index" data-sheet-link>
+              <span class="sheet__num mono">i.</span>
+              <span class="sheet__label">Index</span>
+            </a>
+          </li>
+          <li>
+            <a href="#work" data-sheet-link>
+              <span class="sheet__num mono">ii.</span>
+              <span class="sheet__label">Selected Work</span>
+            </a>
+          </li>
+          <li>
+            <a href="#case" data-sheet-link>
+              <span class="sheet__num mono">iii.</span>
+              <span class="sheet__label">Case Study</span>
+            </a>
+          </li>
+          <li>
+            <a href="#services" data-sheet-link>
+              <span class="sheet__num mono">iv.</span>
+              <span class="sheet__label">Services</span>
+            </a>
+          </li>
+          <li>
+            <a href="#engage" data-sheet-link>
+              <span class="sheet__num mono">v.</span>
+              <span class="sheet__label">Engage</span>
+            </a>
+          </li>
+        </ol>
+
+        <footer class="sheet__foot">
+          <a
+            href="mailto:roaan.dev@gmail.com?subject=Project%20enquiry%20%E2%80%94%20R.A."
+            class="sheet__cta"
+            data-sheet-close
+          >
+            <span>Begin the engagement</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+              <path
+                d="M3 12h17M14 5l7 7-7 7"
+                stroke="currentColor"
+                fill="none"
+                stroke-width="1"
+              />
+            </svg>
+          </a>
+          <span class="mono dim sheet__sign">R.A. · 2026</span>
+        </footer>
+      </nav>
+    </div>
+
+    <main id="top">
+      <!-- ─────────────────────────  HERO  ───────────────────────── -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__meta hero__meta--tl">
+          <span class="mono dim">Rohaan Ashraf</span>
+          <span class="mono">APIs · Full-stack · AI integrations</span>
+        </div>
+        <div class="hero__meta hero__meta--tr">
+          <span class="mono">Remote-first · worldwide</span>
+          <span class="mono dim">flexible hours · async-friendly</span>
+        </div>
+
+        <div class="hero__masthead">
+          <div class="masthead__pre">
+            <span class="rule"></span>
+            <span class="mono"
+              >An independent practice · shipping production software since 2025</span
+            >
+            <span class="rule"></span>
+          </div>
+
+          <h1 id="hero-title" class="display">
+            <span class="line line-1">
+              <em class="ital">Software</em><span class="amp"> that </span>
+            </span>
+            <span class="line line-2"
+              >ships, <em class="ital">scales,</em></span
+            >
+            <span class="line line-3"
+              >and <span class="accent">stays shipped</span
+              ><span class="period">.</span></span
+            >
+          </h1>
+
+          <div class="hero__sub">
+            <p class="lede">
+              I design, build, and deploy REST APIs and full-stack web apps for
+              founders and product teams who need systems that work on day one
+              and on day three-hundred. Node, NestJS, Express, TypeScript across
+              the MERN and MEAN stacks; Python on hand for the AI work.
+              PostgreSQL when it should be, MongoDB when it must be. Plan,
+              prompt, review, test, then ship.
+            </p>
+            <div class="hero__sig">
+              <svg class="sig" viewBox="0 0 220 60" aria-hidden="true">
+                <path
+                  d="M8,42 C18,12 38,8 52,30 C60,44 70,46 80,30 C92,12 108,16 118,38 C128,18 144,14 158,28 C172,42 192,30 210,16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.1"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M70,52 L150,52"
+                  stroke="currentColor"
+                  stroke-width="0.6"
+                />
+              </svg>
+              <span class="mono dim">R.A., engineer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- bottom marquee strip -->
+        <div class="hero__strip">
+          <div class="marquee" data-marquee>
+            <div class="marquee__track">
+              <span>Now booking · Q2 / Q3 2026</span
+              ><span class="bullet">✦</span>
+              <span>REST APIs &amp; server-side services</span
+              ><span class="bullet">✦</span>
+              <span>NestJS · Node · TypeScript</span
+              ><span class="bullet">✦</span>
+              <span>AI integrations &amp; GPT workflows</span
+              ><span class="bullet">✦</span>
+              <span>Full-stack with React &amp; Next.js</span
+              ><span class="bullet">✦</span> <span>Remote · async-friendly</span
+              ><span class="bullet">✦</span>
+              <span>Now booking · Q2 / Q3 2026</span
+              ><span class="bullet">✦</span>
+              <span>REST APIs &amp; server-side services</span
+              ><span class="bullet">✦</span>
+              <span>NestJS · Node · TypeScript</span
+              ><span class="bullet">✦</span>
+              <span>AI integrations &amp; GPT workflows</span
+              ><span class="bullet">✦</span>
+              <span>Full-stack with React &amp; Next.js</span
+              ><span class="bullet">✦</span> <span>Remote · async-friendly</span
+              ><span class="bullet">✦</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- scroll cue -->
+        <div class="hero__cue">
+          <span class="mono dim">read the portfolio</span>
+          <span class="cue__line"></span>
+          <span class="mono">01</span>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────  INDEX / CONTENTS  ───────────────────────── -->
+      <section class="contents" id="index" aria-labelledby="contents-title">
+        <div class="contents__head">
+          <span class="folio">Section 002</span>
+          <h2 id="contents-title" class="kicker">The Contents</h2>
+          <span class="folio folio--r">a reader's guide</span>
+        </div>
+
+        <ol class="toc">
+          <li class="toc__row" data-reveal>
+            <a href="#work" class="toc__link">
+              <span class="toc__num">i.</span>
+              <span class="toc__title"
+                >A short note <em>on how I work</em>, and what I build</span
+              >
+              <span class="toc__dots" aria-hidden="true"></span>
+              <span class="toc__kind mono">prologue</span>
+              <span class="toc__pg mono">003</span>
+            </a>
+          </li>
+          <li class="toc__row" data-reveal>
+            <a href="#work" class="toc__link">
+              <span class="toc__num">ii.</span>
+              <span class="toc__title"
+                >Selected client work, <em>five engagements</em></span
+              >
+              <span class="toc__dots" aria-hidden="true"></span>
+              <span class="toc__kind mono">portfolio</span>
+              <span class="toc__pg mono">004</span>
+            </a>
+          </li>
+          <li class="toc__row" data-reveal>
+            <a href="#case" class="toc__link">
+              <span class="toc__num">iii.</span>
+              <span class="toc__title"
+                >Case study · <em>FirstAidTag</em>, a system on the wrist</span
+              >
+              <span class="toc__dots" aria-hidden="true"></span>
+              <span class="toc__kind mono">long form</span>
+              <span class="toc__pg mono">008</span>
+            </a>
+          </li>
+          <li class="toc__row" data-reveal>
+            <a href="#services" class="toc__link">
+              <span class="toc__num">iv.</span>
+              <span class="toc__title"
+                >Services <em>I'm currently taking on</em></span
+              >
+              <span class="toc__dots" aria-hidden="true"></span>
+              <span class="toc__kind mono">engagement</span>
+              <span class="toc__pg mono">011</span>
+            </a>
+          </li>
+          <li class="toc__row" data-reveal>
+            <a href="#engage" class="toc__link">
+              <span class="toc__num">v.</span>
+              <span class="toc__title"
+                >How we work together · <em>begin a project</em></span
+              >
+              <span class="toc__dots" aria-hidden="true"></span>
+              <span class="toc__kind mono">engage</span>
+              <span class="toc__pg mono">014</span>
+            </a>
+          </li>
+        </ol>
+
+        <!-- pull quote -->
+        <figure class="pullquote" data-reveal>
+          <blockquote>
+            <span class="quote__mark">“</span>
+            I build the kind of software you forget you're paying for: the one
+            that doesn't page you on a Sunday, doesn't break in the demo, and
+            doesn't need rewriting in six months.
+          </blockquote>
+          <figcaption class="mono">
+            R.A., on the only kind worth shipping
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ─────────────────────────  SELECTED WORK  ───────────────────────── -->
+      <section class="selected" id="work" aria-labelledby="selected-title">
+        <div class="selected__head">
+          <span class="folio">Section 004</span>
+          <h2 id="selected-title" class="kicker">
+            Selected Work <span class="ital dim">· five engagements</span>
+          </h2>
+          <span class="folio folio--r mono">2023 · 2026</span>
+        </div>
+
+        <ul class="works">
+          <li
+            class="work"
+            data-img="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=900&q=70"
+          >
+            <a href="#case" class="work__link">
+              <span class="work__no mono">№ 01</span>
+              <span class="work__title">FirstAidTag</span>
+              <span class="work__desc"
+                >An AI-powered medical-health band: a Node service, NFC sync, an
+                AI layer in Python, and a mobile client.
+                <em>Read the case study →</em></span
+              >
+              <span class="work__year mono">2025 · Node · RN · NFC · AI</span>
+            </a>
+          </li>
+
+          <li class="work">
+            <button type="button" class="work__link" data-modal="helperhive">
+              <span class="work__no mono">№ 02</span>
+              <span class="work__title">HelperHive</span>
+              <span class="work__desc"
+                >An on-demand services marketplace with real-time bookings,
+                role-based auth, and NLP-powered chat.</span
+              >
+              <span class="work__year mono"
+                >2025 · Full-stack · REST · NLP</span
+              >
+            </button>
+          </li>
+
+          <li class="work">
+            <button type="button" class="work__link" data-modal="fbr">
+              <span class="work__no mono">№ 03</span>
+              <span class="work__title">FBR Compliance CRM</span>
+              <span class="work__desc"
+                >Automated tax &amp; invoicing aligned with FBR regulations,
+                plus analytics dashboards over heavy transaction data.</span
+              >
+              <span class="work__year mono"
+                >2024 · Node · Postgres · Reports</span
+              >
+            </button>
+          </li>
+
+          <li class="work">
+            <button type="button" class="work__link" data-modal="smartformgen">
+              <span class="work__no mono">№ 04</span>
+              <span class="work__title">SmartFormGen</span>
+              <span class="work__desc"
+                >A browser-based automation that parses web forms and drafts
+                intelligent fills via GPT.</span
+              >
+              <span class="work__year mono"
+                >2024 · Browser · GPT · Automation</span
+              >
+            </button>
+          </li>
+
+          <li class="work">
+            <button type="button" class="work__link" data-modal="corextech">
+              <span class="work__no mono">№ 05</span>
+              <span class="work__title">CorexTech · Email Platform</span>
+              <span class="work__desc"
+                >Server-side integrations &amp; reusable modules for a
+                cross-platform email-marketing automation product.</span
+              >
+              <span class="work__year mono"
+                >2025 · Node · React Native · APIs</span
+              >
+            </button>
+          </li>
+        </ul>
+
+        <div class="works__foot">
+          <span class="mono dim"
+            >end of selected work · for the rest, see GitHub or write</span
+          >
+        </div>
+      </section>
+
+      <!-- ─────────────────────────  HORIZONTAL PINNED CASE STUDY  ───────────────────────── -->
+      <section class="case" id="case" aria-labelledby="case-title">
+        <div class="case__pin">
+          <div class="case__track">
+            <!-- panel 1 · cover -->
+            <article class="panel panel--cover">
+              <div class="panel__meta">
+                <span class="folio">Section 008</span>
+                <span class="mono dim">a case study · in production</span>
+              </div>
+              <h2 id="case-title" class="case__title">
+                <span class="ital">FirstAidTag</span>, <br />or, a backend
+                <br />worn on the <em class="ital">wrist</em>.
+              </h2>
+              <p class="case__deck">
+                An AI-powered medical-health band built on a Node service, with
+                a Python AI layer alongside it: vitals tracked, phone data
+                synced, life-saving updates written back to a physical NFC tag.
+                Live at
+                <a
+                  class="link"
+                  href="https://firstaidtag.ca"
+                  target="_blank"
+                  rel="noopener"
+                  >firstaidtag.ca</a
+                >.
+              </p>
+              <div class="case__byline">
+                <span class="mono"
+                  >Server, data model &amp; NFC sync by Rohaan Ashraf</span
+                >
+                <span class="rule rule--short"></span>
+                <span class="mono dim"
+                  >Engagement · contract · shipped 2025</span
+                >
+              </div>
+            </article>
+
+            <!-- panel 2 · pull quote -->
+            <article class="panel panel--quote">
+              <span class="quote__big">“</span>
+              <p class="case__quote">
+                Treat every <em>byte</em> on the tag like a promise:
+                <span class="accent">honest</span>, current, and ready for the
+                medic who reads it on the worst day.
+              </p>
+              <span class="mono dim"
+                >on the design of the FirstAidTag sync layer</span
+              >
+            </article>
+
+            <!-- panel 3 · diagram + stats -->
+            <article class="panel panel--diagram">
+              <div class="panel__col panel__col--lede">
+                <span class="folio">II.</span>
+                <h3 class="case__h3">The shape of the system.</h3>
+                <p class="case__body">
+                  FirstAidTag is a Node service with a Python AI layer that
+                  bridges three worlds: a React Native mobile client, the AI
+                  that reasons about a wearer's <em>vitals</em>, and a physical
+                  NFC tag any phone can read offline. The hard part is keeping
+                  all three in agreement, gracefully, when the network isn't.
+                </p>
+              </div>
+
+              <div class="panel__col panel__col--diagram">
+                <figure class="figure">
+                  <div class="figure__plate">
+                    <span class="plate__corner plate__corner--tl"></span>
+                    <span class="plate__corner plate__corner--tr"></span>
+                    <span class="plate__corner plate__corner--bl"></span>
+                    <span class="plate__corner plate__corner--br"></span>
+
+                    <svg
+                      class="diagram"
+                      viewBox="0 0 520 560"
+                      aria-hidden="true"
+                    >
+                      <defs>
+                        <marker
+                          id="arr"
+                          viewBox="0 0 10 10"
+                          refX="9"
+                          refY="5"
+                          markerWidth="7"
+                          markerHeight="7"
+                          orient="auto-start-reverse"
+                        >
+                          <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+                        </marker>
+                        <marker
+                          id="arrAccent"
+                          viewBox="0 0 10 10"
+                          refX="9"
+                          refY="5"
+                          markerWidth="7"
+                          markerHeight="7"
+                          orient="auto-start-reverse"
+                        >
+                          <path d="M0,0 L10,5 L0,10 z" fill="#7a1e1e" />
+                        </marker>
+                      </defs>
+
+                      <!-- band labels (left rail) -->
+                      <g
+                        class="d-rail"
+                        font-family="JetBrains Mono"
+                        font-size="9"
+                        letter-spacing="2"
+                        fill="#8a7a63"
+                      >
+                        <text
+                          x="22"
+                          y="84"
+                          transform="rotate(-90 22 84)"
+                          text-anchor="middle"
+                        >
+                          CLIENT
+                        </text>
+                        <text
+                          x="22"
+                          y="280"
+                          transform="rotate(-90 22 280)"
+                          text-anchor="middle"
+                        >
+                          SERVICE
+                        </text>
+                        <text
+                          x="22"
+                          y="476"
+                          transform="rotate(-90 22 476)"
+                          text-anchor="middle"
+                        >
+                          PHYSICAL
+                        </text>
+                      </g>
+
+                      <!-- band rules -->
+                      <g stroke="#14110d" stroke-opacity=".12" stroke-width="1">
+                        <line x1="50" y1="180" x2="500" y2="180" />
+                        <line x1="50" y1="380" x2="500" y2="380" />
+                      </g>
+
+                      <!-- top band: client (mobile) -->
+                      <g class="d-node">
+                        <rect
+                          x="190"
+                          y="42"
+                          width="140"
+                          height="76"
+                          rx="2"
+                          fill="none"
+                          stroke="#14110d"
+                          stroke-width="1"
+                        />
+                        <text
+                          x="260"
+                          y="74"
+                          text-anchor="middle"
+                          font-family="Fraunces"
+                          font-style="italic"
+                          font-size="20"
+                          fill="#14110d"
+                        >
+                          mobile
+                        </text>
+                        <text
+                          x="260"
+                          y="100"
+                          text-anchor="middle"
+                          font-family="JetBrains Mono"
+                          font-size="9.5"
+                          letter-spacing="1.2"
+                          fill="#8a7a63"
+                        >
+                          REACT · NATIVE
+                        </text>
+                      </g>
+                      <text
+                        x="200"
+                        y="36"
+                        font-family="Fraunces"
+                        font-style="italic"
+                        font-size="14"
+                        fill="#7a1e1e"
+                      >
+                        i.
+                      </text>
+
+                      <!-- middle band: the Node service (the centerpiece, filled ink) -->
+                      <g class="d-node-primary">
+                        <rect
+                          x="140"
+                          y="232"
+                          width="240"
+                          height="96"
+                          rx="2"
+                          fill="#14110d"
+                          stroke="#7a1e1e"
+                          stroke-width="1.5"
+                        />
+                        <text
+                          x="260"
+                          y="270"
+                          text-anchor="middle"
+                          font-family="Fraunces"
+                          font-style="italic"
+                          font-size="26"
+                          fill="#f3ede2"
+                        >
+                          node service
+                        </text>
+                        <text
+                          x="260"
+                          y="296"
+                          text-anchor="middle"
+                          font-family="JetBrains Mono"
+                          font-size="9.5"
+                          letter-spacing="1.2"
+                          fill="#b8a98e"
+                        >
+                          REST · WEBHOOKS · QUEUE
+                        </text>
+                        <line
+                          x1="160"
+                          y1="310"
+                          x2="360"
+                          y2="310"
+                          stroke="#7a1e1e"
+                          stroke-opacity=".5"
+                          stroke-width=".6"
+                        />
+                        <text
+                          x="260"
+                          y="320"
+                          text-anchor="middle"
+                          font-family="JetBrains Mono"
+                          font-size="8"
+                          letter-spacing="1.5"
+                          fill="#b8a98e"
+                        >
+                          THE CENTERPIECE
+                        </text>
+                      </g>
+                      <text
+                        x="150"
+                        y="226"
+                        font-family="Fraunces"
+                        font-style="italic"
+                        font-size="14"
+                        fill="#7a1e1e"
+                      >
+                        ii.
+                      </text>
+
+                      <!-- right side annotation: AI layer (Python) -->
+                      <g class="d-side">
+                        <rect
+                          x="400"
+                          y="244"
+                          width="92"
+                          height="72"
+                          rx="2"
+                          fill="none"
+                          stroke="#14110d"
+                          stroke-width="1"
+                          stroke-dasharray="3 3"
+                        />
+                        <text
+                          x="446"
+                          y="276"
+                          text-anchor="middle"
+                          font-family="Fraunces"
+                          font-style="italic"
+                          font-size="16"
+                          fill="#14110d"
+                        >
+                          ai layer
+                        </text>
+                        <text
+                          x="446"
+                          y="296"
+                          text-anchor="middle"
+                          font-family="JetBrains Mono"
+                          font-size="8.5"
+                          letter-spacing="1"
+                          fill="#8a7a63"
+                        >
+                          PYTHON
+                        </text>
+                      </g>
+                      <line
+                        x1="380"
+                        y1="280"
+                        x2="400"
+                        y2="280"
+                        stroke="#14110d"
+                        stroke-width="1"
+                      />
+
+                      <!-- bottom band: physical world -->
+                      <g class="d-node">
+                        <rect
+                          x="70"
+                          y="430"
+                          width="160"
+                          height="76"
+                          rx="2"
+                          fill="none"
+                          stroke="#14110d"
+                          stroke-width="1"
+                        />
+                        <text
+                          x="150"
+                          y="462"
+                          text-anchor="middle"
+                          font-family="Fraunces"
+                          font-style="italic"
+                          font-size="20"
+                          fill="#14110d"
+                        >
+                          vitals
+                        </text>
+                        <text
+                          x="150"
+                          y="488"
+                          text-anchor="middle"
+                          font-family="JetBrains Mono"
+                          font-size="9.5"
+                          letter-spacing="1.2"
+                          fill="#8a7a63"
+                        >
+                          POSTGRES · LEDGER
+                        </text>
+                      </g>
+                      <text
+                        x="80"
+                        y="424"
+                        font-family="Fraunces"
+                        font-style="italic"
+                        font-size="14"
+                        fill="#7a1e1e"
+                      >
+                        iii.
+                      </text>
+
+                      <g class="d-node">
+                        <rect
+                          x="290"
+                          y="430"
+                          width="160"
+                          height="76"
+                          rx="2"
+                          fill="none"
+                          stroke="#14110d"
+                          stroke-width="1"
+                        />
+                        <text
+                          x="370"
+                          y="462"
+                          text-anchor="middle"
+                          font-family="Fraunces"
+                          font-style="italic"
+                          font-size="20"
+                          fill="#14110d"
+                        >
+                          nfc tag
+                        </text>
+                        <text
+                          x="370"
+                          y="488"
+                          text-anchor="middle"
+                          font-family="JetBrains Mono"
+                          font-size="9.5"
+                          letter-spacing="1.2"
+                          fill="#8a7a63"
+                        >
+                          PHYSICAL · OFFLINE
+                        </text>
+                      </g>
+                      <text
+                        x="300"
+                        y="424"
+                        font-family="Fraunces"
+                        font-style="italic"
+                        font-size="14"
+                        fill="#7a1e1e"
+                      >
+                        iv.
+                      </text>
+
+                      <!-- connecting paths: mobile <-> service -->
+                      <g fill="none" stroke="#14110d" stroke-width="1">
+                        <path
+                          d="M260,118 C260,160 260,180 260,232"
+                          marker-end="url(#arr)"
+                          marker-start="url(#arr)"
+                        />
+                      </g>
+                      <text
+                        x="270"
+                        y="178"
+                        font-family="JetBrains Mono"
+                        font-style="italic"
+                        font-size="10"
+                        fill="#8a7a63"
+                      >
+                        sync · auth
+                      </text>
+
+                      <!-- service -> vitals (append) -->
+                      <g fill="none" stroke="#14110d" stroke-width="1">
+                        <path
+                          d="M195,328 C170,370 160,395 150,430"
+                          marker-end="url(#arr)"
+                        />
+                      </g>
+                      <text
+                        x="100"
+                        y="380"
+                        font-family="JetBrains Mono"
+                        font-style="italic"
+                        font-size="10"
+                        fill="#8a7a63"
+                      >
+                        append
+                      </text>
+
+                      <!-- service -> nfc tag (write-back, accent) -->
+                      <g fill="none" stroke="#7a1e1e" stroke-width="1.2">
+                        <path
+                          d="M325,328 C345,370 360,395 370,430"
+                          marker-end="url(#arrAccent)"
+                        />
+                      </g>
+                      <text
+                        x="362"
+                        y="380"
+                        font-family="JetBrains Mono"
+                        font-style="italic"
+                        font-size="10"
+                        fill="#7a1e1e"
+                      >
+                        write-back
+                      </text>
+
+                      <!-- vitals <-> nfc reconcile (dashed at base) -->
+                      <g
+                        fill="none"
+                        stroke="#14110d"
+                        stroke-width=".8"
+                        stroke-dasharray="2 4"
+                      >
+                        <path d="M230,494 L290,494" />
+                      </g>
+                      <text
+                        x="260"
+                        y="528"
+                        text-anchor="middle"
+                        font-family="JetBrains Mono"
+                        font-style="italic"
+                        font-size="9"
+                        fill="#8a7a63"
+                      >
+                        reconcile · offline
+                      </text>
+                    </svg>
+                  </div>
+                  <figcaption class="figure__cap">
+                    <span class="mono dim">Fig. 1 ·</span>
+                    <span class="ital"
+                      >The shape of the system, drawn in three bands: client,
+                      service, and the physical world it writes to.</span
+                    >
+                  </figcaption>
+                </figure>
+              </div>
+            </article>
+
+            <!-- panel 4 · stats ledger -->
+            <article class="panel panel--ledger">
+              <h3 class="case__h3">The outcomes, plainly stated.</h3>
+              <div class="ledger">
+                <div class="ledger__row">
+                  <span class="mono dim">i.</span>
+                  <span class="ledger__k">REST endpoints, shipped</span>
+                  <span class="ledger__dots"></span>
+                  <span class="ledger__v"
+                    ><span class="counter" data-count="36">0</span></span
+                  >
+                </div>
+                <div class="ledger__row">
+                  <span class="mono dim">ii.</span>
+                  <span class="ledger__k">Vital signals, modelled</span>
+                  <span class="ledger__dots"></span>
+                  <span class="ledger__v"
+                    ><span class="counter" data-count="12">0</span></span
+                  >
+                </div>
+                <div class="ledger__row">
+                  <span class="mono dim">iii.</span>
+                  <span class="ledger__k">NFC write &amp; read flows</span>
+                  <span class="ledger__dots"></span>
+                  <span class="ledger__v"
+                    ><span class="counter" data-count="6">0</span></span
+                  >
+                </div>
+                <div class="ledger__row">
+                  <span class="mono dim">iv.</span>
+                  <span class="ledger__k">AI inferences, served daily</span>
+                  <span class="ledger__dots"></span>
+                  <span class="ledger__v"
+                    ><span class="counter" data-count="2400">0</span></span
+                  >
+                </div>
+                <div class="ledger__row ledger__row--accent">
+                  <span class="mono dim">v.</span>
+                  <span class="ledger__k">Sync reliability, percent</span>
+                  <span class="ledger__dots"></span>
+                  <span class="ledger__v"
+                    ><span class="counter" data-count="99">0</span></span
+                  >
+                </div>
+              </div>
+              <p class="ledger__foot mono dim">
+                Honest figures, by the practice's count. Fuller numbers on
+                request.
+              </p>
+            </article>
+
+            <!-- panel 5 · closing remarks -->
+            <article class="panel panel--close">
+              <span class="folio">V.</span>
+              <h3 class="case__close">
+                <em class="ital">In short.</em>
+              </h3>
+              <p class="case__body case__body--lg">
+                FirstAidTag is the kind of system I take pleasure in shipping:
+                hardware, software, and AI agreeing quietly so the person
+                wearing it never has to think about any of it. I'd like to build
+                the next one for you.
+              </p>
+              <a href="#engage" class="case__cta">
+                <span>Start a similar project</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 12h17M14 5l7 7-7 7"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="1"
+                  />
+                </svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────  SERVICES  ───────────────────────── -->
+      <section class="field" id="services" aria-labelledby="field-title">
+        <div class="field__head">
+          <span class="folio">Section 011</span>
+          <h2 id="field-title" class="kicker">
+            Services <span class="dim ital">· what the practice takes on</span>
+          </h2>
+          <span class="folio folio--r mono">four offerings</span>
+        </div>
+
+        <div class="field__grid">
+          <article class="note note--a" data-reveal>
+            <header class="note__head">
+              <span class="mono dim">№ 01 · server-side</span>
+              <span class="mono">typical · 2–6 weeks</span>
+            </header>
+            <h3 class="note__title">
+              APIs &amp; server-side <em class="ital">services</em>.
+            </h3>
+            <p class="note__deck">
+              The thing I do most. NestJS or Express on Node + TypeScript,
+              Postgres or Mongo, JWT auth, webhooks, third-party integrations.
+              Documented, tested, and handed over.
+            </p>
+            <footer class="note__foot mono">
+              <span>shipped on a calendar</span>
+              <a
+                class="arrow"
+                href="#engage"
+                aria-label="Engage on server-side service"
+                >→</a
+              >
+            </footer>
+          </article>
+
+          <article class="note note--b" data-reveal>
+            <header class="note__head">
+              <span class="mono dim">№ 02 · ai · integrations</span>
+              <span class="mono">typical · 1–4 weeks</span>
+            </header>
+            <h3 class="note__title">
+              AI features, <em class="ital">tastefully</em> integrated.
+            </h3>
+            <p class="note__deck">
+              GPT-backed automations, NLP on real product data, AI-assisted
+              internal tools. Planned, prompted, reviewed, and shipped, not
+              dropped in and forgotten.
+            </p>
+            <footer class="note__foot mono">
+              <span>scoped, not sprinkled</span>
+              <a
+                class="arrow"
+                href="#engage"
+                aria-label="Engage on AI integration"
+                >→</a
+              >
+            </footer>
+          </article>
+
+          <article class="note note--c" data-reveal>
+            <header class="note__head">
+              <span class="mono dim">№ 03 · full-stack</span>
+              <span class="mono">typical · 4–10 weeks</span>
+            </header>
+            <h3 class="note__title">
+              Full-stack web apps, <em class="ital">end to end</em>.
+            </h3>
+            <p class="note__deck">
+              When you need the API <em>and</em> a UI on top. Next.js or React
+              on the front, the same careful engineering underneath, deployed to
+              Vercel or whatever fits.
+            </p>
+            <footer class="note__foot mono">
+              <span>idea to live URL</span>
+              <a
+                class="arrow"
+                href="#engage"
+                aria-label="Engage on full-stack app"
+                >→</a
+              >
+            </footer>
+          </article>
+
+          <article class="note note--d" data-reveal>
+            <header class="note__head">
+              <span class="mono dim">№ 04 · custom CRM</span>
+              <span class="mono">typical · 4–8 weeks</span>
+            </header>
+            <h3 class="note__title">
+              Custom CRMs, <em class="ital">built around the work</em>.
+            </h3>
+            <p class="note__deck">
+              For teams that have outgrown the spreadsheet but don't fit
+              off-the-shelf CRMs. Customer ledgers, automated invoicing,
+              tax-compliant flows (FBR-ready), dashboards that surface the
+              numbers you actually look at. Built around your process, not
+              someone else's.
+            </p>
+            <footer class="note__foot mono">
+              <span>tailored, not templated</span>
+              <a class="arrow" href="#engage" aria-label="Engage on custom CRM"
+                >→</a
+              >
+            </footer>
+          </article>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────  HOW WE WORK / CONTACT  ───────────────────────── -->
+      <section class="colophon" id="engage" aria-labelledby="colophon-title">
+        <div class="colophon__head">
+          <span class="folio">Section 014</span>
+          <h2 id="colophon-title" class="kicker">
+            How We Work &amp; <span class="ital">How to Engage</span>
+          </h2>
+          <span class="folio folio--r">begin a project</span>
+        </div>
+
+        <div class="colophon__grid">
+          <div class="col col--about">
+            <figure class="portrait" data-reveal>
+              <div class="portrait__frame">
+                <img
+                  src="assets/portrait.jpg"
+                  srcset="assets/portrait.jpg 1x, assets/portrait@2x.jpg 2x"
+                  width="360"
+                  height="360"
+                  alt="Rohaan Ashraf, engineer"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption class="portrait__cap">
+                <span class="mono dim">Plate I.</span>
+                <span class="mono"
+                  >Rohaan Ashraf, <em>engineer</em>, photographed for the
+                  portfolio.</span
+                >
+              </figcaption>
+            </figure>
+            <h3 class="col__h">A short note on the practice.</h3>
+            <p>
+              The practice is one engineer (me, Rohaan), currently working
+              full-time as an Associate Software Engineer at Infinitiv.AI and
+              taking on a small number of outside engagements each quarter. That
+              keeps the work careful and the calendar honest.
+            </p>
+            <p class="dim">
+              I write in TypeScript and JavaScript on Node, reach for Python
+              when AI work calls for it, commit to
+              <span class="mono">main</span> through pull requests, and treat
+              the README as part of the deliverable.
+            </p>
+          </div>
+
+          <div class="col col--contact">
+            <h3 class="col__h">Begin a project.</h3>
+            <ul class="contact">
+              <li>
+                <span class="mono dim">email →</span>
+                <a href="mailto:roaan.dev@gmail.com">roaan.dev@gmail.com</a>
+              </li>
+              <li>
+                <span class="mono dim">linkedin →</span>
+                <a
+                  href="https://linkedin.com/in/rohaanmughal"
+                  target="_blank"
+                  rel="noopener"
+                  >in/rohaanmughal</a
+                >
+              </li>
+              <li>
+                <span class="mono dim">github →</span>
+                <a
+                  href="https://github.com/rohaan1829"
+                  target="_blank"
+                  rel="noopener"
+                  >github / rohaan1829</a
+                >
+              </li>
+              <li>
+                <span class="mono dim">phone →</span>
+                <a href="tel:+923297280829">+92 329 7280829</a>
+              </li>
+            </ul>
+
+            <aside class="enquiry">
+              <header class="enquiry__head">
+                <span class="enquiry__num mono dim">№ 02</span>
+                <h4 class="enquiry__h">A useful enquiry.</h4>
+              </header>
+              <p class="enquiry__lede">
+                Easier to scope, quicker to reply. A good first message
+                tends to mention:
+              </p>
+              <ol class="enquiry__list">
+                <li>
+                  <span class="enquiry__k mono">i.</span>
+                  <span>A sentence or two on what you're building.</span>
+                </li>
+                <li>
+                  <span class="enquiry__k mono">ii.</span>
+                  <span>A rough timeline. Imprecise is fine.</span>
+                </li>
+                <li>
+                  <span class="enquiry__k mono">iii.</span>
+                  <span>The stack, or what you're considering.</span>
+                </li>
+                <li>
+                  <span class="enquiry__k mono">iv.</span>
+                  <span>
+                    A link to anything that already exists, a Figma, a
+                    repo, a one-page brief.
+                  </span>
+                </li>
+              </ol>
+              <footer class="enquiry__foot mono dim">
+                Replies typically within two working hours.
+              </footer>
+            </aside>
+          </div>
+
+          <div class="col col--credits">
+            <h3 class="col__h">The way the work goes.</h3>
+            <dl class="credits">
+              <dt>01 · Brief</dt>
+              <dd>A short call. What, why, and by when.</dd>
+              <dt>02 · Proposal</dt>
+              <dd>Scope, schedule, price. In writing.</dd>
+              <dt>03 · Build</dt>
+              <dd>Weekly demos. No surprises at the end.</dd>
+              <dt>04 · Handover</dt>
+              <dd>Code, docs, and a quiet deploy.</dd>
+              <dt>05 · After</dt>
+              <dd>30 days of support, gratis.</dd>
+            </dl>
+          </div>
+        </div>
+
+        <!-- giant CTA -->
+        <div class="farewell">
+          <span class="farewell__pre mono">now booking · Q2 / Q3 2026</span>
+          <h2 class="farewell__title">
+            <em class="ital">Let's</em> <span class="accent">build it.</span>
+          </h2>
+          <a
+            href="mailto:roaan.dev@gmail.com?subject=Project%20enquiry%20%E2%80%94%20R.A."
+            class="farewell__cta"
+          >
+            <span>Begin the engagement</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+              <path
+                d="M3 12h17M14 5l7 7-7 7"
+                stroke="currentColor"
+                fill="none"
+                stroke-width="1.2"
+              />
+            </svg>
+          </a>
+          <span class="farewell__post mono dim"
+            >a reply within two hours · the practice · 2026</span
+          >
+        </div>
+      </section>
+
+      <!-- ─────────────────────────  MODAL  ───────────────────────── -->
+      <div
+        class="modal"
+        id="projectModal"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <div class="modal__backdrop" data-modal-close></div>
+        <article class="modal__panel" role="document">
+          <header class="modal__head">
+            <span class="folio" id="modalKicker">Project Brief</span>
+            <button
+              type="button"
+              class="modal__close"
+              data-modal-close
+              aria-label="Close"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 5l14 14M19 5L5 19"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-width="1.2"
+                />
+              </svg>
+            </button>
+          </header>
+          <div class="modal__body" id="modalBody"></div>
+          <footer class="modal__foot">
+            <a href="#engage" class="modal__cta" data-modal-close>
+              <span>Start a similar project</span>
+              <svg
+                viewBox="0 0 24 24"
+                width="14"
+                height="14"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 12h17M14 5l7 7-7 7"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-width="1"
+                />
+              </svg>
+            </a>
+            <span class="mono dim" id="modalMeta"></span>
+          </footer>
+        </article>
+      </div>
+
+      <div class="foot__seal" aria-hidden="true">
+        <span class="foot__rule"></span>
+        <img
+          src="assets/logo-64.png"
+          srcset="assets/logo-64.png 1x, assets/logo-128.png 2x"
+          width="44"
+          height="44"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="foot__rule"></span>
+      </div>
+
+      <footer class="foot">
+        <div class="foot__l mono dim">
+          © 2026 · Rohaan Ashraf · independent practice · all rights, in the gentle
+          sense, reserved
+        </div>
+        <div class="foot__c mono"><span class="dot"></span> open for work</div>
+        <div class="foot__r mono dim">
+          no cookies · no analytics · only craft
+        </div>
+      </footer>
+    </main>
+
+    <!-- libs -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
