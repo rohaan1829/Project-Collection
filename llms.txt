@@ -1,0 +1,60 @@
+# Rohaan Ashraf
+
+> Software engineer running an independent practice. Builds production
+> REST APIs, full-stack web applications, AI integrations, and custom
+> CRMs for founders and product teams. Currently Associate Software
+> Engineer at Infinitiv.AI. Available for client engagements each quarter.
+
+## About
+
+Rohaan Ashraf is a software engineer based remotely, taking on a small
+number of outside engagements each quarter while working full-time at
+Infinitiv.AI. The independent practice focuses on shipping software
+that ages well: tested, documented, and reliable in production.
+
+Core stack: Node.js, NestJS, Express, TypeScript across MERN and MEAN.
+PostgreSQL or MongoDB for data. React and Next.js on the front end when
+the engagement requires it. Python on hand for AI and data work.
+
+## Services offered
+
+- **REST APIs and server-side services** — production backends on Node.
+  Authentication, webhooks, third-party integrations. Typical
+  engagement: 2 to 6 weeks.
+- **AI integrations** — GPT-backed automations, NLP on real product
+  data, AI-assisted internal tools. Typical engagement: 1 to 4 weeks.
+- **Full-stack web applications** — React or Next.js on the front,
+  Node.js underneath, deployed to Vercel or comparable. Typical
+  engagement: 4 to 10 weeks.
+- **Custom CRMs** — bespoke customer-relationship and invoicing
+  systems for teams that have outgrown spreadsheets. FBR-compliant
+  tax flows available. Typical engagement: 4 to 8 weeks.
+
+## Selected work
+
+- **FirstAidTag** (firstaidtag.ca) — AI-powered medical-health band,
+  Node service with Python AI layer, NFC sync, React Native client.
+- **HelperHive** — on-demand services marketplace with real-time
+  booking, role-based authentication, and NLP-powered chat.
+- **FBR Compliance CRM** — automated tax and invoicing system aligned
+  with FBR regulations, with analytics dashboards over heavy
+  transaction data.
+- **SmartFormGen** — browser-based automation that parses web forms
+  and drafts intelligent fills via GPT.
+- **CorexTech Email Platform** — server-side integrations and reusable
+  modules for a cross-platform email-marketing automation product.
+
+## How to engage
+
+- Email: roaan.dev@gmail.com
+- GitHub: github.com/rohaan1829
+- LinkedIn: linkedin.com/in/rohaanmughal
+- Portfolio: https://roaan.dev
+
+Replies typically within two working hours.
+
+A useful first message tends to include:
+1. A sentence or two on what you're building.
+2. A rough timeline.
+3. The stack, or what you're considering.
+4. A link to anything that already exists (Figma, repo, brief).
